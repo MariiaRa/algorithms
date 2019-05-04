@@ -1,24 +1,30 @@
 package ua.com.sorting
 
 import org.scalatest.FunSuite
+import Data._
 
 class MergeSortTest extends FunSuite {
 
-  val ints = List(4, 56, 90, 13, 11, 2, 57, 88, 33)
-  val chars = List('s', 'v', 'a', 'b', 'd')
-  val doubles = List(1.56, 45.03, 99.99, 0.33, 11.13, 5.005, 5.006, 23.05)
+  def buildStrem(take: Int): Stream[Int] =
+    if (take == 0) Stream.Empty
+    else Stream.cons(util.Random.nextInt(666), buildStrem(take - 1))
 
-  test("Insertion sorting can sort list of integers") {
+  test("Merge sorting can sort list of integers") {
     val expected = List(2, 4, 11, 13, 33, 56, 57, 88, 90)
 
     val sorted = MergeSort.sort(ints)
+    val stream = buildStrem(10)
+    val sortedStream = MergeSort.sortTwo(stream)
 
     assert(sorted == expected)
     assert(sorted.head == 2)
     assert(sorted.last == 90)
+    assert(sortedStream.length == 10)
+    assert(sortedStream.head < sortedStream.last)
+    sortedStream.sliding(2).foreach{ pair => assert(pair.head < pair.last)}
   }
 
-  test("Insertion sorting can sort list of characters") {
+  test("Merge sorting can sort list of characters") {
     val expected = List('a', 'b', 'd', 's', 'v')
 
     val sorted = MergeSort.sort(chars)
@@ -28,7 +34,7 @@ class MergeSortTest extends FunSuite {
     assert(sorted.last == 'v')
   }
 
-  test("Insertion sorting can sort list of doubles") {
+  test("Merge sorting can sort list of doubles") {
     val expected = List(0.33, 1.56, 5.005, 5.006, 11.13, 23.05, 45.03, 99.99)
 
     val sorted = MergeSort.sort(doubles)

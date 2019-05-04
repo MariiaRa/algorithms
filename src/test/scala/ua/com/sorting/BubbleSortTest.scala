@@ -1,13 +1,9 @@
 package ua.com.sorting
 
 import org.scalatest.FunSuite
+import Data._
 
 class BubbleSortTest extends FunSuite {
-
-  val ints = List(4, 56, 90, 13, 11, 2, 57, 88, 33)
-  val chars = List('s', 'v', 'a', 'b', 'd')
-  val doubles = List(1.56, 45.03, 99.99, 0.33, 11.13, 5.005, 5.006, 23.05)
-  val strings = List("kappa", "gamma", "epsilon", "theta", "beta", "lambda", "alpha")
 
   test("Bubble sorting can sort list of integers") {
     val expected = List(2, 4, 11, 13, 33, 56, 57, 88, 90)
