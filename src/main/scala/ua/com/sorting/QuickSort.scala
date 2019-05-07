@@ -1,5 +1,10 @@
 package ua.com.sorting
 
+/*
+  Best  	      Average     	Worst
+  Ω(n log(n))	  θ(n log(n))  	O(n^2)
+*/
+
 object QuickSort {
 
   def sort[T](elements: List[T])(implicit ord: Ordering[T]): List[T] = {

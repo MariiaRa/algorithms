@@ -2,6 +2,11 @@ package ua.com.sorting
 
 import scala.annotation.tailrec
 
+/*
+  Best  	Average 	Worst
+  Ω(n^2)	θ(n^2)	  O(n^2)
+*/
+
 object SelectionSort {
 
   // pseudo-code for traditional solution

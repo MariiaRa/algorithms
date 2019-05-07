@@ -1,5 +1,10 @@
 package ua.com.sorting
 
+/*
+  Best  	      Average 	    Worst
+  Ω(n log(n))	  θ(n log(n))	  O(n log(n))
+*/
+
 object HeapSort {
 
   // // If left child is larger than root
@@ -53,7 +58,7 @@ object HeapSort {
   def sort[T](elements: Array[T])(implicit ord: Ordering[T]): Array[T] = {
     (elements.size - 1 to 0 by -1)
       .foldLeft(buildHeap(elements)){ (array, index) =>
-        heapify(swap(array, 0, index), 0, index - 1)
+        heapify(swap(array, 0, index), 0, index - 1) // At this point, the largest item is stored at the root of the heap. Replace it with the last item of the heap followed by reducing the size of heap by 1.
       }
   }
 }
