@@ -3,10 +3,8 @@ package ua.com.sorting
 object RadixSort {
 
   def sort(elements: Array[Int], numberOfDigits: Int, base: Int): Array[Int] = {
-    var digit = 1
-    for (i <- 1 to numberOfDigits) {
-      countSort(elements, digit, base)
-      digit *= base
+    for (digit <- 1 to numberOfDigits) {
+      countSort(elements, Math.pow(base, digit).toInt, base)
     }
     elements
   }
