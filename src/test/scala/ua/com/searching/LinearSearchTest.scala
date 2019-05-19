@@ -2,6 +2,7 @@ package ua.com.searching
 
 import org.scalatest.FunSuite
 import ua.com.Data._
+
 class LinearSearchTest extends FunSuite {
 
   test("Linear search can find an integer in a list of integers") {
