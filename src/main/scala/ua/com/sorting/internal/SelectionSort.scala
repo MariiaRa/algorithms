@@ -1,11 +1,4 @@
-package ua.com.sorting
-
-import scala.annotation.tailrec
-
-/*
-  Best  	Average 	Worst
-  Ω(n^2)	θ(n^2)	  O(n^2)
-*/
+package ua.com.sorting.internal
 
 object SelectionSort {
 

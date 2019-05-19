@@ -1,6 +1,7 @@
 package ua.com.sorting
 
 import org.scalatest.FunSuite
+import ua.com.sorting.internal.BucketSort
 
 class BucketSortTest extends FunSuite {
   test("Counting sorting can sort list of integers") {

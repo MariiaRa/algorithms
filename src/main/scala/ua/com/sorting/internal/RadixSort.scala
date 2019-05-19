@@ -1,4 +1,4 @@
-package ua.com.sorting
+package ua.com.sorting.internal
 
 object RadixSort {
 

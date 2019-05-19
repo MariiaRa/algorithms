@@ -1,9 +1,4 @@
-package ua.com.sorting
-
-/*
-  Best  	      Average        Worst
- 	Ω(n log(n))	  θ(n log(n))	   O(n log(n))
-*/
+package ua.com.sorting.internal
 
 object MergeSort {
 

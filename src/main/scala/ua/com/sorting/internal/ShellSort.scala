@@ -1,4 +1,4 @@
-package ua.com.sorting
+package ua.com.sorting.internal
 
 object ShellSort {
 
@@ -53,6 +53,7 @@ object ShellSort {
         swap(a, j, j - h)
     hsort(h / 3, a, n)
   }
+
   private def less[T](i: T, j: T)(implicit ord: Ordering[T]): Boolean =  ord.lt(i, j)
 
   private def swap [T](arr: Array [T], i: Int, j: Int): Array[T] = {

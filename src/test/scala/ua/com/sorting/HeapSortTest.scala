@@ -1,7 +1,8 @@
 package ua.com.sorting
 
 import org.scalatest.FunSuite
-import Data._
+import ua.com.Data._
+import ua.com.sorting.internal.HeapSort
 
 import scala.collection.mutable
 class HeapSortTest extends FunSuite {

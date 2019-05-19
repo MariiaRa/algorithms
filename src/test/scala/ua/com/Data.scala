@@ -1,4 +1,4 @@
-package ua.com.sorting
+package ua.com
 
 object Data {
   val ints = List(4, 56, 90, 13, 11, 2, 57, 88, 33)

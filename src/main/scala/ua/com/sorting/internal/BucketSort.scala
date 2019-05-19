@@ -1,6 +1,4 @@
-package ua.com.sorting
-
-import scala.collection.mutable.ArrayBuffer
+package ua.com.sorting.internal
 
 object BucketSort {
 

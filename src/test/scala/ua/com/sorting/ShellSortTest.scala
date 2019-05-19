@@ -1,6 +1,7 @@
 package ua.com.sorting
 
 import org.scalatest.FunSuite
+import ua.com.sorting.internal.ShellSort
 
 class ShellSortTest extends FunSuite {
 
