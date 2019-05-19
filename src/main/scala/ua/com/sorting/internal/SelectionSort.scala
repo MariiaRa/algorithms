@@ -1,6 +1,4 @@
-package ua.com.sorting
-
-import scala.annotation.tailrec
+package ua.com.sorting.internal
 
 object SelectionSort {
 
