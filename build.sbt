@@ -1,4 +1,4 @@
-name := "Algorithms"
+name := "AlgorithmsAndDataStructures"
 
 version := "0.1"
 
