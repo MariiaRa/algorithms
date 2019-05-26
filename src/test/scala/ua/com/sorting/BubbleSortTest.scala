@@ -2,7 +2,6 @@ package ua.com.sorting
 
 import org.scalatest.FunSuite
 import ua.com.Data._
-import ua.com.sorting.internal.BubbleSort
 
 class BubbleSortTest extends FunSuite {
 
