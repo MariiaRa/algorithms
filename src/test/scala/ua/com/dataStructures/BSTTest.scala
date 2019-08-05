@@ -1,7 +1,7 @@
 package ua.com.dataStructures
 
 import org.scalatest.FunSuite
-import ua.com.dataStructures.trees.{BST, RBTree}
+import ua.com.dataStructures.trees.{AVLTree, BST, RBTree}
 
 class BSTTest extends FunSuite {
 
@@ -33,10 +33,10 @@ class BSTTest extends FunSuite {
 
     val height = tree.height
 
-    println(s"initial tree: $tree")
+   // println(s"initial tree: $tree")
 
  val removed = tree.delete(2)
-    println(s"removed 2: $removed")
+  //  println(s"removed 2: $removed")
 
     assert(height == 4)
 

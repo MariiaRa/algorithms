@@ -7,7 +7,6 @@ class LinkedListTest extends FunSuite {
 
   test("can create LinkedList from sequence of elements") {
     val list = LinkedList(1, 2, 3, 4)
-    assume(list.isInstanceOf[LinkedList])
 
     assert(list.size == 4)
   }
