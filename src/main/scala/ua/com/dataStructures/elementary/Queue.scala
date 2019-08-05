@@ -1,11 +1,5 @@
 package ua.com.dataStructures.elementary
 
-/**
-  * A queue is a simple data structure
-  * that allows elements to be inserted from one end, called the rear(also called tail),
-  * and deleted from the other end, called the front (also called head).
-  */
-
 class Queue[+A](front: List[A] = Nil, rear: List[A] = Nil) {
   /**
     * Check whether the queue is empty or not
@@ -37,7 +31,7 @@ class Queue[+A](front: List[A] = Nil, rear: List[A] = Nil) {
     *              Time - O(1)
     *              Space - O(1)
     */
-  def enqueue[B >: A](elem: B) = new Queue(front, elem :: rear)
+  def enqueue[B >: A](elem: B) = new Queue(elem :: front, rear)
 
   /**
     * Returns the first element of the queue
@@ -48,8 +42,8 @@ class Queue[+A](front: List[A] = Nil, rear: List[A] = Nil) {
     * Space - O(1)
     */
   def head: A =
-    if (front.nonEmpty) front.head
-    else if (rear.nonEmpty) rear.last
+    if (rear.nonEmpty) rear.head
+    else if (front.nonEmpty) front.last
     else throw new NoSuchElementException("head on empty queue")
 
   /**
@@ -59,8 +53,8 @@ class Queue[+A](front: List[A] = Nil, rear: List[A] = Nil) {
     * Space - O(1)
     */
   def tail: Queue[A] =
-    if (front.nonEmpty)  new Queue(front.tail, rear)
-    else if (rear.nonEmpty) new Queue(Nil, front.dropRight(1))
+    if (rear.nonEmpty) new Queue(front, rear.tail)
+    else if (front.nonEmpty) new Queue(Nil, front.reverse.tail)
     else throw new NoSuchElementException("tail on empty queue")
 
   /** Returns a string representation of the queue
