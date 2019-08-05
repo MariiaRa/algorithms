@@ -347,7 +347,7 @@ abstract sealed class RBTree[+A] {
         case RBNode(_, x, a, b) => RBTree.make(Red, t.value, t.left, t.right)
       }
     }
-    del(newRedden(this))
+    del(redden(this))
   }
 
 
@@ -362,6 +362,14 @@ abstract sealed class RBTree[+A] {
     }
     }
   }
+
+
+
+
+
+
+
+
 
   def rotate[A](c: Color, l: RBTree[A], z: A, r: RBTree[A]): RBTree[A] = (c, l, z, r) match {
   //rotate R (T BB a x b) y (T B c z d) = balance B (T R (T B a x b) y c) z d
@@ -391,13 +399,14 @@ abstract sealed class RBTree[+A] {
     //rotate color axb=T coloraxb
       case (c, a, x, b) => RBTree.make(c, x, a, b)
   }
+
 }
 
 case class RBNode[+A](
-    color: Color,
-    value: A,
-    left: RBTree[A],
-    right: RBTree[A]) extends RBTree[A] {
+                       color: Color,
+                       value: A,
+                       left: RBTree[A],
+                       right: RBTree[A]) extends RBTree[A] {
   def isEmpty = false
 }
 
