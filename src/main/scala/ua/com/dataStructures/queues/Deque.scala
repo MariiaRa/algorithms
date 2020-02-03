@@ -46,28 +46,14 @@ case class Deque[+A](outLen: Int, out: Stream[A], inLen: Int, in: Stream[A], c: 
       Deque(outLen, out, inLen, in, c)
   }
 
-  /** Returns a string representation of the queue
-    */
   override def toString = (in.toList ::: out.toList.reverse).mkString("Deque(", ",", ")")
 
 }
 
 object Deque {
 
-  /**
-    * Creates a new empty queue.
-    *
-    * Time - O(1)
-    * Space - O(1)
-    */
   def empty[A]: Deque[A] = new Deque(0, Stream.Empty, 0, Stream.Empty)
 
-  /**
-    * Creates a new queue fromm given elements.
-    *
-    * Time - O(n)
-    * Space - O(1)
-    */
   def apply[A](xs: A*): Deque[A] = {
     val elements = xs.toList
     val (f, r) = elements.splitAt(elements.length / 2)

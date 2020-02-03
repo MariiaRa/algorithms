@@ -1,7 +1,7 @@
 package ua.com.dataStructures
 
 import org.scalatest.FunSuite
-import ua.com.dataStructures.trees.{AVLTree, BST}
+import ua.com.dataStructures.trees.{AVLTree, BST, SplayTree}
 
 class AVLTreeTest extends FunSuite {
 
